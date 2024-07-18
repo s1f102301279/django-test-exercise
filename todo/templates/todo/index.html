@@ -10,8 +10,12 @@
   </head>
 
   <body>
-    <h1>To Do アプリ</h1>
+    <header>
+      <h1>今日やるべきもの</h1>
+    </header>
+    
     <p>以下のフォームからタスクを送信できます。</p>
+    <div class="contents"><div class="item">
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
       <div>
@@ -27,16 +31,16 @@
       </div>
     </form>
     <br>
-
-    <div>
+    
+    
       <a href="{% url 'index' %}?order=due">締め切り順</a> |
       <a href="{% url 'index' %}?order=post">投稿
       <form action="{% url 'delete_all' %}" method="post" style="display: inline;">
         {% csrf_token %}
-        <button type="submit">Delete All Tasks</button>
+        <button type="submit">すべて削除</button>
       </form>
     </div>
-
+    <div class="item item1">
     {% for task in tasks %}
     <div class="text">
       <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
@@ -53,6 +57,8 @@
       </ul>
     </div>
     {% endfor %}
+  </div>
+</div>
   </body>
 
 </html>

@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  font-family: "ＭＳ Ｐ明朝","MS PMincho";
+
+}
+body{
+  background-color: black;
+  color: red;
+}
+header{
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 150px;
+}
+h1{
+  font-family: "ＭＳ Ｐ明朝","MS PMincho";
+  font-size: 40px;
+}
+.contents{
+  margin-top: 50px;
+  display: flex;
+  justify-content:center;
+}
+.item1{
+  border-left: solid 2px grey;
+  padding-left: 20px;
+
+}
+p{
+  padding:20px;
+}
+button{
+  border: 0;
+  background-color: black;
+  color: red;
+}
