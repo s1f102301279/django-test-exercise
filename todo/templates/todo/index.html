@@ -30,7 +30,11 @@
 
     <div>
       <a href="{% url 'index' %}?order=due">締め切り順</a> |
-      <a href="{% url 'index' %}?order=post">投稿順</a>
+      <a href="{% url 'index' %}?order=post">投稿
+      <form action="{% url 'delete_all' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Delete All Tasks</button>
+      </form>
     </div>
 
     {% for task in tasks %}

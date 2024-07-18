@@ -58,6 +58,7 @@ def update(request, task_id):
     }
     return render(request, "todo/edit.html", context)
 
+
 def delete(request, task_id):
     try:
         task = Task.objects.get(pk=task_id)
@@ -65,3 +66,9 @@ def delete(request, task_id):
         raise Http404("Task does not exist")
     task.delete()
     return redirect(index)
+
+
+def delete_all(request):
+    if request.method == "POST":
+        Task.objects.all().delete()
+    return redirect('index')
